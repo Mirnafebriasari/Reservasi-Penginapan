@@ -122,6 +122,7 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
     Ganti nama file .env.example menjadi .env
     
     Atur database (sesuaikan jika perlu):
+    
     ```env
     DB_DATABASE=reservasi_db
     DB_USERNAME=root
@@ -142,6 +143,7 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
 
     ```bash
     php artisan key:generate
+    npm install
     ```
 
 8.  **Buat Storage Link**
@@ -155,13 +157,11 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
     php artisan serve
     ```
 
-10.  **Install Frontend & Run Vite**
+10.  **Run Vite di terminal terpisah**
 
-    Jalankan di terminal terpisah
-    ```bash
-    npm install
-    npm run dev
-    ```
+        ```bash
+         npm run dev  
+        ```
 
 11. Buka:
     http://127.0.0.1:8000/
