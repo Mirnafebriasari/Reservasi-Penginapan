@@ -119,9 +119,8 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
 
 3.  **Konfigurasi File `.env`**
 
-    ```bash
-    cp .env.example .env
-    ```
+    Ganti nama file .env.example menjadi .env
+    
     Atur database (sesuaikan jika perlu):
     ```env
     DB_DATABASE=reservasi_db
@@ -129,34 +128,34 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
     DB_PASSWORD=
     ```
 
-4.  **Jalankan XAMPP**
+5.  **Jalankan XAMPP**
 
     Aktifkan: `Apache` dan `MySQL`.
 
-5.  **Migrasi & Seeder**
+6.  **Migrasi & Seeder**
 
     ```bash
     php artisan migrate --seed
     ```
 
-6.  **Generate `APP_KEY`**
+7.  **Generate `APP_KEY`**
 
     ```bash
     php artisan key:generate
     ```
 
-7.  **Buat Storage Link**
+8.  **Buat Storage Link**
 
     ```bash
     php artisan storage:link
     ```
-8. **Menjalankan Aplikasi**
+9. **Menjalankan Aplikasi**
 
     ```bash
     php artisan serve
     ```
 
-9.  **Install Frontend & Run Vite**
+10.  **Install Frontend & Run Vite**
 
     Jalankan di terminal terpisah
     ```bash
@@ -164,7 +163,7 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
     npm run dev
     ```
 
-10. Buka:
+11. Buka:
     http://127.0.0.1:8000/
 
 ---
