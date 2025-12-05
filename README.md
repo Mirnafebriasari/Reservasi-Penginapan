@@ -1,66 +1,235 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏨 Sistem Reservasi Penginapan Puncak Sari
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi berbasis Laravel yang digunakan untuk mengelola pemesanan kamar, fasilitas, pembayaran, dan manajemen pengguna. Sistem ini menyediakan dua peran utama yaitu **User** dan **Admin**, masing-masing dengan fitur operasional yang berbeda.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Daftar Isi
+- [Tentang Proyek](#tentang-proyek)
+- [Fitur Utama](#fitur-utama)
+- [Struktur Proyek](#struktur-proyek)
+- [Teknologi yang Digunakan](#teknologi-yang-digunakan)
+- [Instalasi](#instalasi)
+- [Menjalankan Aplikasi](#menjalankan-aplikasi)
+- [Cara Menggunakan Aplikasi](#cara-menggunakan-aplikasi)
+- [Akun Admin Default](#akun-admin-default)
+- [Kontributor](#kontributor)
+- [Lisensi](#lisensi)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tentang Proyek
 
-## Learning Laravel
+Sistem Reservasi Penginapan Puncak Sari merupakan aplikasi berbasis web yang dibangun menggunakan **Laravel Framework**. Aplikasi ini dirancang untuk memudahkan manajemen kamar, fasilitas, reservasi, pembayaran, serta manajemen pengguna.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Aplikasi ini mendukung:
+- **User** → reservasi kamar, upload pembayaran, riwayat reservasi.
+- **Admin** → verifikasi pembayaran, manajemen kamar, fasilitas, user, dan reservasi.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Fitur Utama
 
-## Laravel Sponsors
+### Fitur User
+- Registrasi dan login
+- Melihat fasilitas penginapan
+- Melakukan reservasi kamar
+- Upload bukti pembayaran
+- Melihat status reservasi (Pending, Approved, Rejected)
+- Check-in & Check-out
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Fitur Admin
+- Dashboard admin
+- CRUD User & Admin
+- CRUD Kamar
+- CRUD Fasilitas
+- Melihat semua reservasi
+- Approve / Reject reservasi
+- Verifikasi bukti pembayaran
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 📂 Struktur Proyek
 
-## Contributing
+Struktur utama aplikasi Laravel:
+ ```bash
+app/
+├── Http/
+│ ├── Controllers/
+│ ├── Middleware/
+├── Models/
+├── Services/
+bootstrap/
+config/
+database/
+├── migrations/
+├── seeders/
+public/
+resources/
+├── views/
+routes/
+storage/
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Detail:
+*   **Controllers** → logika utama aplikasi (`ReservasiController`, `FasilitasController`, dsb).
+*   **Models** → representasi tabel database (`User`, `Kamar`, `Fasilitas`, `Reservasi`).
+*   **Services** → layanan eksternal (misalnya `FonnteService`).
+*   **Views** → file Blade untuk antarmuka aplikasi.
+*   **Migrations & Seeders** → struktur tabel dan data awal.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Teknologi yang Digunakan
 
-## Security Vulnerabilities
+| Teknologi | Deskripsi |
+|----------|-----------|
+| **Laravel** | Framework backend berbasis PHP. |
+| **MySQL** | Database utama. |
+| **XAMPP** | Web server lokal (Apache + MySQL). |
+| **Composer** | Manajer paket PHP. |
+| **Node.js & NPM** | Build asset frontend. |
+| **TailwindCSS** | Styling antarmuka. |
+| **GitHub** | Version control. |
+| **VS Code** | Editor kode. |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## ⚙️ Instalasi & Setup
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Prasyarat
+
+Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan **XAMPP** (Apache dan MySQL aktif).
+
+### Langkah-Langkah
+
+1.  **Clone Repository**
+
+    ```bash
+    git clone https://github.com/Mirnafebriasari/Reservasi-Penginapan.git
+    cd Reservasi-Penginapan
+    ```
+
+2.  **Install Dependensi Laravel**
+
+    ```bash
+    composer install
+    ```
+
+3.  **Konfigurasi File `.env`**
+
+    ```bash
+    cp .env.example .env
+    ```
+    Atur database (sesuaikan jika perlu):
+    ```env
+    DB_DATABASE=reservasi_db
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
+
+4.  **Jalankan XAMPP**
+
+    Aktifkan: `Apache` dan `MySQL`.
+
+5.  **Migrasi & Seeder**
+
+    ```bash
+    php artisan migrate --seed
+    ```
+
+6.  **Generate `APP_KEY`**
+
+    ```bash
+    php artisan key:generate
+    ```
+
+7.  **Buat Storage Link**
+
+    ```bash
+    php artisan storage:link
+    ```
+
+8.  **Install Frontend & Run Vite**
+
+    ```bash
+    npm install
+    npm run dev  # Jalankan dan biarkan terminal ini tetap berjalan
+    ```
+---
+
+## Menjalankan Aplikasi
+
+Jalankan server Laravel di terminal terpisah:
+
+```bash
+php artisan serve
+```
+
+Cara Menggunakan Aplikasi
+1. User
+   
+A. Registrasi
+
+    - Buka halaman utama
+    - Klik Register
+    - Isi nama, email, password
+    - Login sebagai user
+
+B. Melihat Fasilitas
+
+    - Klik Daftar Fasilitas
+
+C. Membuat Reservasi
+
+    - Klik Tambah Reservasi
+    - Pilih kamar dan tanggal
+    - Sistem menghitung total otomatis
+    - Klik Simpan
+
+D. Melakukan Pembayaran
+
+    - Masuk menu Pembayaran
+    - Upload bukti transfer
+
+E. Menunggu Verifikasi Admin
+
+    - Status akan berubah menjadi:
+        Pending
+        Approved
+        Rejected
+
+F. Check-in & Check-out
+
+    - Bisa dilakukan setelah pembayaran disetujui.
+
+2. Admin
+Admin dapat:
+
+    - Mengelola user & admin
+    - Mengelola fasilitas
+    - Mengelola kamar
+    - Mengelola semua reservasi
+    - Approve/Reject pembayaran
+    - Melihat riwayat reservasi
+
+🔐 Akun Admin Default
+Akun awal yang dibuat melalui seeder:
+
+ ```bash
+Email: admin@gmail.com
+Password: admin123
+```
+
+👨‍💻 Kontributor
+Kelompok 6 – Pemrograman Web
+
+ ```bash
+Nama	                NIM
+Mirna Febriasari	    H071241078
+Siti Nur Halisa Tahir	H071241086
+Angel Catrina Sobbu	    H071241094
+```
+
+📄 Lisensi
+Proyek ini dibuat untuk keperluan pembelajaran dan dapat dimodifikasi sesuai kebutuhan.
