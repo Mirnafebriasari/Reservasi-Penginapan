@@ -1,4 +1,5 @@
-# 🏨 Sistem Reservasi Penginapan Puncak Sari
+# Sistem Reservasi Penginapan Puncak Sari
+![Beranda Utama](images/1.png)
 
 Aplikasi berbasis Laravel yang digunakan untuk mengelola pemesanan kamar, fasilitas, pembayaran, dan manajemen pengguna. Sistem ini menyediakan dua peran utama yaitu **User** dan **Admin**, masing-masing dengan fitur operasional yang berbeda.
 
@@ -149,25 +150,30 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
     ```bash
     php artisan storage:link
     ```
-
-8.  **Install Frontend & Run Vite**
+8. **Menjalankan Aplikasi**
 
     ```bash
-    npm install
-    npm run dev  # Jalankan dan biarkan terminal ini tetap berjalan
+    php artisan serve
     ```
+
+9.  **Install Frontend & Run Vite**
+
+    Jalankan di terminal terpisah
+    ```bash
+    npm install
+    npm run dev
+    ```
+
+10. Buka:
+    http://127.0.0.1:8000/
+
 ---
 
-## Menjalankan Aplikasi
 
-Jalankan server Laravel di terminal terpisah:
-
-```bash
-php artisan serve
-```
-
-Cara Menggunakan Aplikasi
+**Cara Menggunakan Aplikasi**
 1. User
+
+![Dashboard User](images/3.png)
    
 A. Registrasi
 
@@ -204,6 +210,9 @@ F. Check-in & Check-out
     - Bisa dilakukan setelah pembayaran disetujui.
 
 2. Admin
+
+![Dashboard Admin](images/2.png)
+
 Admin dapat:
 
     - Mengelola user & admin
