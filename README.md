@@ -128,6 +128,11 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
     DB_USERNAME=root
     DB_PASSWORD=
     ```
+    Jika anda ingin menghubungkan whatsapp API maka tambahkan token juga di .env
+    
+    ```env
+    FONNTE_API_KEY=sUv9Sd293fd3Re6pbry1 #Silahkan sesuaikan dengan token yang anda sudah daftarkan di fonnte.con
+    ```
 
 5.  **Jalankan XAMPP**
 
