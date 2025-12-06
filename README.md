@@ -119,7 +119,8 @@ Pastikan Anda telah menginstal **PHP**, **Composer**, **Node.js** & **NPM**, dan
 
 3.  **Konfigurasi File `.env`**
 
-    Ganti nama file .env.example menjadi .env
+    Jika belum ada, duplikat file .env.example
+    lalu ubah nama menjadi .env.
     
     Atur database (sesuaikan jika perlu):
     
